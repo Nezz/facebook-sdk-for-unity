@@ -119,7 +119,6 @@ namespace Facebook.Unity.Editor
         public static string GetAndroidSdkPath()
         {
             string sdkPath = EditorPrefs.GetString("AndroidSdkRoot");
-            #if UNITY_2019_1_OR_NEWER
             if (string.IsNullOrEmpty(sdkPath) || EditorPrefs.GetBool("SdkUseEmbedded"))
             {
                 string androidPlayerDir = BuildPipeline.GetPlaybackEngineDirectory(BuildTarget.Android, BuildOptions.None);
@@ -132,7 +131,6 @@ namespace Facebook.Unity.Editor
                     }
                 }
             }
-            #endif
 
             return sdkPath;
         }
